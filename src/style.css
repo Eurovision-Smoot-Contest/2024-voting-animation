@@ -1,10 +1,10 @@
 @font-face {
     font-family: "Penny Lane";
-    src: url("/fonts/penny-lane.otf") format("opentype");
+    src: url("./fonts/penny-lane.otf") format("opentype");
 }
 @font-face {
     font-family: "Penny Lane Bold";
-    src: url("/fonts/penny-lane-bold.otf") format("opentype");
+    src: url("./fonts/penny-lane-bold.otf") format("opentype");
 }
 body {
     background-color: #03007F;
@@ -31,8 +31,10 @@ body {
 #fjs-hosts-screen {
     display: flex;
     grid-area: a;
+    width: 100%;
     background-color: limegreen;
     border: solid #030352 3px;
+    transition: width 1s linear, border 1s linear;
 }
 
 #fjs-country-screen {
@@ -52,10 +54,12 @@ body {
     font-family: "Penny Lane Bold", sans-serif;
     color: white;
     padding-left: 25px;
+    margin-top: 10px;
 }
 #fjs-cs-tab p {
     font-size: 1em;
     color: white;
+    font-family: "Penny Lane", sans-serif;
     padding-left: 25px;
 }
 
@@ -68,50 +72,58 @@ body {
                 "c h"
                 "d i"
                 "e -";
-    grid-gap: 0 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 50px;
+    height: 80%;
 }
 .fjs-p-div {
     display: grid;
-    grid-template: "a b c d" auto / 80px auto 70px 70px;
-    width: 100%;
+    grid-template: "a b c d" auto / 80px 240px 70px 70px;
+    width: 0;
     height: 50px;
     background-color: white;
     overflow: hidden;
+    transition: width 1.5s linear;
 }
 .fjs-p-div img {
     width: 80px;
     height: 50px;
 }
 .fjs-p-div h1 {
-    font-size: 2em;
-    font-family: "Panny Lane", sans-serif;
-    margin: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4em;
+    font-family: "Panny Lane Bold", sans-serif;
+    font-weight: 800;
+    margin: 5px;
 }
 .fjs-p-from {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100px;
     height: 50px;
     color: #F50183;
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-family: "Penny Lane Bold", sans-serif;
-}
-.fjs-p-from span {
-    position: absolute;
+    overflow: hidden;
 }
 .fjs-p-to {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100px;
     height: 50px;
     color: white;
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-family: "Penny Lane Bold", sans-serif;
 }
-.fjs-p-to span {
+.fjs-p-from span, .fjs-p-to span {
     position: absolute;
+    margin-right: 10px;
+    margin-top: 0;
 }
 
 #fjs-country-points {
@@ -126,15 +138,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 0;
+    height: 0;
     font-family: "Penny Lane Bold", sans-serif;
     font-size: 1.25em;
-    color: #03007F;
+    color: #0D2EA8;
     background-color: #030352;
+    overflow: hidden;
+    transition: width .5s ease-in-out, height .5s ease-in-out;
+}
+.fjs-cp-div span {
+    transform: translateX(32px);
+    transition: transform 1s ease-in-out;
 }
 #fjs-cp-9 {
-    height: 25px;
     background-color: #F6ED03;
     color: #F50183;
     border: none;
