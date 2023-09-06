@@ -1,0 +1,142 @@
+@font-face {
+    font-family: "Penny Lane";
+    src: url("penny-lane.otf") format("opentype");
+}
+@font-face {
+    font-family: "Penny Lane Bold";
+    src: url("penny-lane-bold.otf") format("opentype");
+}
+body {
+    background-color: #03007F;
+}
+
+
+
+#first-jury-screen {
+    position: fixed;
+    display: grid;
+    grid-template:
+            "a a b" calc(50% - 25px)
+            "c c b" calc(50% - 25px)
+            "o o d" 50px;
+    grid-template-columns: 1fr 1fr 400px;
+    grid-gap: 15px 50px;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 500px);
+    height: calc(100vh - 200px);
+    padding: 100px 250px;
+}
+
+#fjs-hosts-screen {
+    display: flex;
+    grid-area: a;
+    background-color: limegreen;
+    border: solid #030352 3px;
+}
+
+#fjs-country-screen {
+    grid-area: b;
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    border: solid #030352 3px;
+}
+#fjs-cs-screen {
+    background-color: red;
+}
+#fjs-cs-tab {
+    background-color: #030352;
+}
+#fjs-cs-tab h1 {
+    font-size: 1.5em;
+    font-family: "Penny Lane Bold", sans-serif;
+    color: white;
+    padding-left: 25px;
+}
+#fjs-cs-tab p {
+    font-size: 1em;
+    color: white;
+    padding-left: 25px;
+}
+
+#fjs-points {
+    grid-area: c;
+    display: grid;
+    grid-template:
+                "a f"
+                "b g"
+                "c h"
+                "d i"
+                "e -";
+    grid-gap: 0 30px;
+}
+.fjs-p-div {
+    display: grid;
+    grid-template: "a b c d" auto / 80px auto 70px 70px;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    overflow: hidden;
+}
+.fjs-p-div img {
+    width: 80px;
+    height: 50px;
+}
+.fjs-p-div h1 {
+    font-size: 2em;
+    font-family: "Panny Lane", sans-serif;
+    margin: 10px;
+}
+.fjs-p-from {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    color: #F50183;
+    font-size: 1.25em;
+    font-family: "Penny Lane Bold", sans-serif;
+}
+.fjs-p-from span {
+    position: absolute;
+}
+.fjs-p-to {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    color: white;
+    font-size: 1.25em;
+    font-family: "Penny Lane Bold", sans-serif;
+}
+.fjs-p-to span {
+    position: absolute;
+}
+
+#fjs-country-points {
+    grid-area: d;
+    display: grid;
+    grid-template: "a b c d e f g h i j";
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 5px;
+}
+.fjs-cp-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-family: "Penny Lane Bold", sans-serif;
+    font-size: 1.25em;
+    color: #03007F;
+    background-color: #030352;
+}
+#fjs-cp-9 {
+    height: 25px;
+    background-color: #F6ED03;
+    color: #F50183;
+    border: none;
+    border-bottom: solid #F50183 7px;
+}
