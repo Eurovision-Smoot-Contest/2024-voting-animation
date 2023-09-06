@@ -1,10 +1,10 @@
 @font-face {
     font-family: "Penny Lane";
-    src: url("penny-lane.otf") format("opentype");
+    src: url("/fonts/penny-lane.otf") format("opentype");
 }
 @font-face {
     font-family: "Penny Lane Bold";
-    src: url("penny-lane-bold.otf") format("opentype");
+    src: url("/fonts/penny-lane-bold.otf") format("opentype");
 }
 body {
     background-color: #03007F;

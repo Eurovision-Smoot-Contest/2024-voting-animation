@@ -17,15 +17,13 @@ require("dotenv").config();
 const secretToken = process.env.SECRET_TOKEN;
 
 app.use("/jquery", express.static(path.join(__dirname, "node_modules/jquery/dist")));
-app.use("/style.css", express.static(path.join(__dirname, "style.css")));
-app.use("/client.js", express.static(path.join(__dirname, "client.js")));
-app.use("/penny-lane.otf", express.static(path.join(__dirname, "penny-lane.otf")));
-app.use("/penny-lane-bold.otf", express.static(path.join(__dirname, "penny-lane-bold.otf")));
+app.use(express.static("src"));
+app.use("/fonts", express.static(path.join(__dirname, "src/fonts")));
 
 app.get("/*", (req, res) => {
     const pass = req.query.pass;
     if (pass === secretToken) {
-        res.sendFile(path.join(__dirname, "index.html"));
+        res.sendFile(path.join(__dirname, "src/index.html"));
     } else {
         res.send("You are not allowed to access to the scoreboard.");
     }
